@@ -1,0 +1,2 @@
+# fontnames = ['LiberationSerif-Regular', 'LiberationSerif-Bold', 'LiberationSerif-Italic', 'LiberationSerif-BoldItalic']
+fontnames = ['PTAstraSerif-Regular', 'PTAstraSerif-Bold', 'PTAstraSerif-Italic', 'PTAstraSerif-BoldItalic']
