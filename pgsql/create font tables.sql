@@ -82,3 +82,16 @@ create table pdf.glyphs (
 create index glyphs_glyphsid_idx on pdf.glyphs(glyphs_id);
 create index glyphs_glyphs_namesid_idx on pdf.glyphs(fonts_id, glyphs_names_id);
 -- ------------------------------------------------
+
+-- --------- Отступы между парами глифов ----------
+drop table if exists pdf.kernings cascade;
+create table pdf.kernings (
+	kernings_id serial primary key,
+	fonts_id int4 references pdf.fonts,
+	left_glyph_id int4 references pdf.glyphs (glyphs_id),
+	rigth_glyph_id int4 references pdf.glyphs (glyphs_id),
+	kerning int4
+);
+create index kernings_kerningsid_idx on pdf.kernings(kernings_id);
+create index kernings_glyphspair_idx on pdf.kernings(fonts_id, left_glyph_id, rigth_glyph_id);
+-- ------------------------------------------------
